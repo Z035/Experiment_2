@@ -5,12 +5,11 @@ class Integrator(abc.ABC):
     @abc.abstractmethod
     def __init__(self, model, dt):
         """
-
         :param model: model obj with a rhs() method that takes t,y and returns dy/dt
         :param dt:
         """
-        self.model = model
-        self.dt = dt
+        self._model = model
+        self._dt = dt
 
     @abc.abstractmethod
     def step(self, t, y):
